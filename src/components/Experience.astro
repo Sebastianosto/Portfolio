@@ -1,0 +1,25 @@
+---
+import ExperienceItem from "../icons/ExperienceItem.astro"
+
+const EXPERIENCE = [
+    {
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:2561939385.
+        "date": "March 2023 - Present",
+        "title": "Junior Odoo Developer",
+        "company": "Grupo Temi, C.A.",
+        "description": "All of the pages and components are first designed in Figma and we keep a parity between the two versions even as we update the project."
+    }
+]
+---
+
+<ol class="relative border-s border-gray-200 ml-4 z-[-4]">                  
+        {
+            EXPERIENCE.map(experience => (
+                <li class="mb-10 ms-4">
+                    <ExperienceItem {...experience}/>
+                </li>
+            ))
+
+        }
+</ol>
+

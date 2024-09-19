@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GitHubIcon from '../icons/GitHub.astro';
+import LinkedInIcon from '../icons/LinkedIn.astro';
+import MailIcon from '../icons/Mail.astro';
+import BriefcaseIcon from '../icons/Briefcase.astro';
+import SocialPill from '../components/SocialPill.astro';
+import Experience from '../components/Experience.astro';
+import Section from '../components/Section.astro';
+import CodeIcon from '../icons/Code.astro';
+import Project from '../components/Project.astro'
+import Profilephoto from '../components/phofilePhoto.astro'
+import UserIcon from '../icons/User.astro';
+import TecnologyIcon from '../icons/Tecnology.astro';
+import About from '../components/About.astro';
+import Technology from '../components/Technology.astro';
+---
+
+<Layout 
+	title="Sebastian Osto - Data Scientist and Backend Developer with 5 years of experience"
+	description="Hire Sebastian Osto to develop server-side web applications or to work on a data extraction and analysis process."
+	>
+	<main class="px-4">
+		<Section class="pt-36 items-center">
+			<div class="w-100 md:w-[30%] lg:w-[30%]  md:float-left lg:float-left align-items-center">
+				<Profilephoto/>
+			</div>
+			<div class="w-100 md:w-[60%] lg:w-[60%] md:float-left lg:float-left">
+				<h1 class="text-white mt-10 md:mt-[0px] lg:mt-[0px] lg: text-4xl lg:text-5xl font-bold gap-x-4 pb-6 lg:pb-10">
+					Hi, I'm <span class="text-[#18ff6d]/90">Sebastian Osto</span>
+				</h1>
+				<h2 class="text-xl text-wrap max-w-[700px] text-white/90">
+					<span>+5 years of experience.</span><span class="text-[#18ff6d]/90"> Backend Developer, and Data Scientist.</span> <span>Born in Venezuela.</span> 
+					<span>Specialized in</span> <span class="text-[#18ff6d]/90 ">Create and Custom</span> <span>Solutions according to the needs of the clients.</span>
+				</h2>
+				<nav class="flex gap-4 mt-8 flex-wrap">
+					<SocialPill href="https://www.linkedin.com/in/sebastian-osto/">
+						<LinkedInIcon class="size-4 md:size-4"/>
+						LinkedIn					
+					</SocialPill>
+					<SocialPill href="https://github.com/Sebastianosto">
+						<GitHubIcon class="size-4 md:size-4"/>
+						GitHub
+					</SocialPill>
+					<SocialPill href="mailto:miguelosto1@gmail.com">
+						<MailIcon class="size-4 md:size-4"/>
+						miguelosto1@gmail.com
+					</SocialPill>	
+				</nav>
+			</div>		
+		</Section>
+		<Section id="work-experience" class="pt-40 clear-both">
+			<h2 class="text-3xl font-bold mb-10 flex gap-x-3 items-center">
+				<BriefcaseIcon class="size-8"/>
+				Work Experience
+			</h2>
+			<Experience />	
+		</Section>
+
+		<Section id="projects" class="pt-10 clear-both">
+			<h2 class="text-3xl font-bold mb-10 flex gap-x-3 items-center">
+				<CodeIcon class="size-8"/>
+				Projects
+			</h2>
+			<div class="align-items-center justify-content-center">
+				<Project/>	
+			</div>
+		</Section>
+
+		<Section id="tecnologies" class="pt-10">
+			<h2 class="text-3xl font-bold mb-10 flex gap-x-3 items-center">
+				<TecnologyIcon class="size-8"/>
+				Technologies
+			</h2>
+			<Technology />
+
+
+		</Section>
+
+		<Section id="about" class="pt-10">
+			<h2 class="text-3xl font-bold mb-10 flex gap-x-3 items-center">
+				<UserIcon class="size-8"/>
+				About
+			</h2>
+			<About />
+		</Section>
+
+	</main>
+</Layout>

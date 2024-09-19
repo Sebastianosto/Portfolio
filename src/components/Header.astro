@@ -1,0 +1,46 @@
+<header class="justify-center flex items-center py-5 w-full mx-auto">
+    <nav id="menu" class="text-xs lg:text-[16px] flex flex-row gap-x-10 backdrop-blur-sm z-10 border bg-white/10 border-white/50 items-center fixed top-5 px-4 py-2 rounded-full">
+        <a href="#work-experience" aria-label="work-experience" class="text-[#18FF6D]/90">Experience</a>
+        <a href="#projects" aria-label="projects" class="text-[#18FF6D]/90">Projects</a>
+        <a href="#tecnologies" aria-label="tecnologies" class="text-[#18FF6D]/90">Tecnologies</a>
+        <a href="#about" aria-label="about" class="text-[#18FF6D]/90">About</a>
+    </nav>
+</header>
+<script>
+    // Seleccionamos todos los enlaces del menú
+    const navLinks = document.querySelectorAll('#menu a');
+    
+    // Seleccionamos todas las secciones que queremos observar
+    const sections = document.querySelectorAll('section');
+  
+    // Función que elimina la clase activa de todos los enlaces
+    function removeActiveClass() {
+      navLinks.forEach(link => link.classList.remove('text-[#18FF6D]/90'));
+    }
+  
+    // Configuramos el Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Obtiene el id de la sección visible
+          const sectionId = entry.target.getAttribute('id');
+          
+          // Busca el enlace que tenga el href igual al id de la sección visible
+          const activeLink = document.querySelector(`#menu a[href="#${sectionId}"]`);
+  
+          // Remueve la clase activa de todos los enlaces y luego añade la clase activa al enlace visible
+            if (activeLink) {
+                removeActiveClass();
+                activeLink.classList.add('text-[#18FF6D]/90');
+            }
+        }
+      });
+    }, { threshold: 0.5 }); // El umbral define cuándo una sección está visible (50% en este caso)
+  
+    // Observa todas las secciones
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+  
+  

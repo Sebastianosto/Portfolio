@@ -1,0 +1,140 @@
+---
+import HTML from '../icons/tags/html.astro';
+import CSS from '../icons/tags/css.astro';
+import JavaScript from '../icons/tags/js.astro';
+import Python from '../icons/tags/python.astro';
+import Django from '../icons/tags/django.astro';
+import Flask from '../icons/tags/flask.astro';
+import Numpy from '../icons/tags/numpy.astro';
+import Pandas from '../icons/tags/pandas.astro';
+import MySQL from '../icons/tags/mysql.astro';
+import PostgreSQL from '../icons/tags/postgresql.astro';
+import Sklearn from '../icons/tags/sklearn.astro';
+import CLanguage from '../icons/tags/clanguage.astro';
+import Golang from '../icons/tags/golang.astro';
+import Git from '../icons/tags/git.astro';
+import Tailwind from '../icons/tags/tailwind.astro';
+import Laravel from '../icons/tags/laravel.astro';
+
+const MAIN_SKILLS = [
+    {
+        title: "Python",
+        class: "hover:bg-[#4584B6] text-white",
+        icon: Python
+    },
+    {
+        title: "Django",
+        class: "hover:bg-[#138A36] text-white",
+        icon: Django
+    },
+    {
+        title: "Flask",
+        class: "hover:bg-[#04E824]/80 text-white",
+        icon: Flask
+    },
+    {
+        title: "Numpy",
+        class: "hover:bg-[#4DABCF] text-white",
+        icon: Numpy
+    },
+    {
+        title: "Pandas",
+        class: "hover:bg-[#E70488]/80 text-white",
+        icon: Pandas
+    },
+    {
+        title: "MySQL",
+        class: "hover:bg-[#f8981d] text-white",
+        icon: MySQL
+    },
+    {
+        title: "Postgres",
+        class: "hover:bg-[#336791] text-white",
+        icon: PostgreSQL
+    },
+    {
+        title: "SKlearn",
+        class: "hover:bg-[#EF9437] text-white",
+        icon: Sklearn
+    },
+
+
+
+
+]
+
+const COMPLEMENTARY_SKILLS = [
+    {
+        title: "Git",
+        class: "hover:bg-[#f34f29] hover:text-white",
+        icon: Git
+    },
+    {
+        title: "HTML",
+        class: "hover:bg-orange-400 hover:text-white",
+        icon: HTML
+    },
+    {
+        title: "CSS",
+        class: "hover:bg-blue-400 hover:text-white",
+        icon: CSS
+    },
+    {
+        title: "JS",
+        class: "hover:bg-yellow-400 hover:text-white",
+        icon: JavaScript
+    },
+    {
+        title: "C/C++",
+        class: "hover:bg-[#1A4674] text-white",
+        icon: CLanguage
+    },
+    {
+        title: "Golang",
+        class: "hover:bg-[#08afd8] hover:text-white",
+        icon: Golang
+    },
+    {
+        title: "Laravel",
+        class: "hover:bg-[#ff3427] hover:text-white",
+        icon: Laravel
+    },
+
+    {
+        title: "Tailwind",
+        class: "hover:bg-[#48aeb4] hover:text-white",
+        icon: Tailwind
+    },
+
+
+]
+---
+<article class="z-0 hover:z-0 mb-10 border-2 md:items-center sm:items-center  flex flex-col  border-white/10 bg-white/5 hover:border-2 rounded-[15px] pt-1 pb-6 px-3 transition hover:border-[#18ff6d]/10">
+    <h3 class="text-xl font-semibold pb-6">Main Skills</h3>
+    <ul class="flex gap-x-6 px-auto flex-row flex-wrap justify-center">
+        {
+            MAIN_SKILLS.map(({title ,class: className, icon: Icon}) => (
+                        <li class=`rounded-full p-3  size-20 flex flex-col items-center justify-center mb-4 bg-white/20 transition ${className}` >
+                            <Icon class="size-10"/>
+                            <h4 class="text-xs pt-2 font-semibold text-white block text-align-center">{title}</h4>  
+                        </li>
+            ))
+        }
+    </ul>
+    
+</article>
+
+<article class="z-0 hover:z-0 mb-10 border-2 md:items-center sm:items-center flex flex-col  border-white/10 bg-white/5 hover:border-2 rounded-[15px] pt-1 pb-6 px-3 transition hover:border-[#18ff6d]/10">
+    <h3 class="text-xl font-semibold pb-6 ">Complementary Skills</h3>
+    <ul class="flex gap-x-6 px-auto flex-row flex-wrap justify-center">
+        {
+            COMPLEMENTARY_SKILLS.map(({title ,class: className, icon: Icon}) => (
+                        <li class=`rounded-full p-3  size-20 flex flex-col items-center justify-center mb-4 bg-white/20 transition ${className}` >
+                            <Icon class="size-20"/>
+                            <h4 class="text-xs pt-2 font-bold text-white block text-align-center">{title}</h4>  
+                        </li>
+            ))
+        }
+    </ul>
+    
+</article>

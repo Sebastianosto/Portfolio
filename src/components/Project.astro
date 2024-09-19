@@ -1,0 +1,92 @@
+---
+import HTML from '../icons/tags/html.astro';
+import CSS from '../icons/tags/css.astro';
+import JavaScript from '../icons/tags/js.astro';
+import SourcePill from './SourcePill.astro';
+import LinkIcon from '../icons/Link.astro';
+import GitHubICon from '../icons/GitHub.astro';
+const TAGS = {
+    HTML: {
+        name: "HTML",
+        class: "bg-orange-400 text-white",
+        icon: HTML
+    },
+    CSS: {
+        name: "CSS",
+        class: "bg-blue-400 text-white",
+        icon: CSS
+    },
+    JavaScript: {
+        name: "JavaScript",
+        class: "bg-yellow-400 text-white",
+        icon: JavaScript
+    }
+}
+const PROJECTS = [
+    {
+        title: "Correo electrónico seguro, inteligente y fácil de usar",
+        description: "Mejora tu productividad con Gmail, que ahora se integra con Google Chat, Google Meet y otros servicios, todos en un mismo lugar.",
+        link: "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox",
+        github: "https://github.com/mofasets/proyecto_databox",
+        image: "/img/projects/svg-project.webp",
+        tags: [TAGS.HTML,TAGS.CSS,TAGS.JavaScript]
+
+    },
+    {
+        title: "Correo electrónico seguro, inteligente y fácil de usar",
+        description: "Mejora tu productividad con Gmail, que ahora se integra con Google Chat, Google Meet y otros servicios, todos en un mismo lugar.",
+        link: "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox",
+        github: "https://github.com/mofasets/proyecto_databox",
+        image: "/img/projects/svg-project.webp",
+        tags: [TAGS.HTML,TAGS.CSS,TAGS.JavaScript]
+
+    },
+    {
+        title: "Correo electrónico seguro, inteligente y fácil de usar",
+        description: "Mejora tu productividad con Gmail, que ahora se integra con Google Chat, Google Meet y otros servicios, todos en un mismo lugar.",
+        link: "https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox",
+        github: "https://github.com/mofasets/proyecto_databox",
+        image: "/img/projects/svg-project.webp",
+        tags: [TAGS.HTML,TAGS.CSS,TAGS.JavaScript]
+
+    }
+
+
+
+]
+---
+
+{
+    PROJECTS.map(({image ,title, description, tags}) => (
+        <div class="z-0 hover:z-0 flex flex-col lg:flex-row mb-10 border-2 border-white/10 bg-white/5 hover:border-2 rounded-[15px] py-3 px-3 transition hover:border-[#18ff6d]/10">
+            <article class="w-full mb-4 lg:mb-0">
+                    <img class="rounded-[15px] h-full block" src={image} alt=`project screenchot` />
+            </article>
+            <article class="lg:mx-10 md:mt-4 sm:mt-4 w-full">
+                    <h3 class="text-2xl font-semibold mb-2 text-[#18FF6D]/90">{title}</h3>
+                    <ul class="flex gap-x-2 flex-row mb-2">
+                        {tags.map((tag) => (
+                            <li>
+                                <span class={`flex gap-x-1 rounded-full text-xs ${tag.class} py-1 px-2 justify-center items-center`}>
+                                    <tag.icon class="size-4"/>
+                                    {tag.name}
+                                </span>
+                            </li>
+                        ))}
+                    </ul>
+                    <p class="text-lg mb-4 text-pretty">{description}</p>
+                    <div class="flex gap-x-4">
+                        <SourcePill href="https://github.com/Sebastianosto" class="w-30">
+                            <GitHubICon class="size-4"/>
+                            Code        
+                        </SourcePill>
+
+                        <SourcePill href="https://github.com/Sebastianosto" class="w-30">
+                            <LinkIcon class="size-4"/>
+                            Preview        
+                        </SourcePill>
+                    </div>
+            </article>
+        </div>
+    ))
+}

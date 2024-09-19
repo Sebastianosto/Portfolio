@@ -1,0 +1,61 @@
+---
+interface Props {
+	title: string;
+	description:string;
+	link?:string;
+}
+
+const { description, title } = Astro.props;
+import Header from '../components/Header.astro';
+import "@fontsource-variable/onest"
+import Footer from '../components/Footer.astro';
+
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+
+	<body class="relative">
+		<Header />
+		<slot />
+		<Footer/>
+	</body>
+</html>
+<style is:global>
+	:root {
+		color-scheme: light dark;
+	}
+
+
+	html {
+		font-family: "Onest Variable",system-ui, sans-serif;
+		scroll-behavior: smooth;
+	}
+
+	body{
+		background: rgb(7,37,48);
+		background: radial-gradient(circle, rgba(7,37,48,1) 0%, rgba(3,73,61,1) 100%);
+		flex-direction: column;
+		min-height: 100vh;
+		color:#FFF;
+
+		@media (prefers-reduce-motion){
+			html {
+				scroll-behavior: auto;
+			}
+		}
+	}
+
+	nav a{
+		color: #FFF;
+	}
+
+</style>
